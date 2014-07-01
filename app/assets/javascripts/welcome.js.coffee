@@ -1,0 +1,3 @@
+jQuery ->
+
+   s = skrollr.init()

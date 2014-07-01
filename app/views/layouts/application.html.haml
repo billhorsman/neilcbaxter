@@ -1,0 +1,28 @@
+!!!
+%html{ lang: "en" }
+  %head
+    %title Neil Baxter
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    %meta{ name: "viewport", content: "width=device-width, initial-scale=1" }
+    = csrf_meta_tags
+  %body{ class: body_class }
+    %nav.navbar.navbar-default.navbar-fixed-top{ role: "navigation" }
+      .container
+        .navbar-header
+          %button.navbar-toggle{ type: "button", data: { toggle: "collapse", target: "#main_nav" } }
+            %span.sr-only Toggle Navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          = link_to root_path, class: "navbar-brand" do
+            %span Neil Baxter
+
+        #main_nav.collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            = smart_link_to "Sports Design", sports_design_path
+            = smart_link_to "Industrial", industrial_path
+            = smart_link_to "Philosophy", philosophy_path
+
+    .container
+      = yield
